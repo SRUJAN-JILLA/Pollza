@@ -108,3 +108,27 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
+
+/* auth styles */
+.auth {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #fafafa;
+  display: none;
+  z-index: 1;
+  padding-top: 95px;
+}
+.auth.open {
+  display: block;
+}
+.auth a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.auth .modal {
+  display: none;
+}
+.auth .modal.active {
+  display: block;
+}
