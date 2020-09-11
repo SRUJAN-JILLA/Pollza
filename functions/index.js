@@ -73,17 +73,3 @@ exports.upvote = functions.https.onCall((data, context) => {
       });
   });
 });
-
-//     // update the array in user document
-//     return user
-//       .update({
-//         upvotedOn: [...doc.data().upvotedOn, data.id],
-//       })
-//       .then(() => {
-//         // update the votes on the request
-//         return request.update({
-//           upvotes: admin.firestore.FieldValue.increment(1),
-//         });
-//       });
-//   });
-// });
