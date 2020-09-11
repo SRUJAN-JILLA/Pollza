@@ -62,7 +62,11 @@
           <span class="text">{{ request.text }}</span>
           <div>
             <span class="votes">{{ request.upvotes }}</span>
-            <i class="material-icons upvote">arrow_upward</i>
+            <i
+              class="material-icons upvote"
+              v-on:click="upvoteRequest(request.id)"
+              >arrow_upward</i
+            >
           </div>
         </li>
       </ul>
@@ -70,40 +74,19 @@
 
     <!-- vue js -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-functions.js"></script>
+    <!-- update the version number as needed -->
+    <script src="/__/firebase/7.20.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script src="/__/firebase/7.20.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.20.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.20.0/firebase-functions.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script src="/__/firebase/7.20.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/init.js"></script>
 
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAqogSs1MyyEbXgYN3WzqLtd4VJ5CVSD_s",
-        authDomain: "pollza.firebaseapp.com",
-        databaseURL: "https://pollza.firebaseio.com",
-        projectId: "pollza",
-        storageBucket: "pollza.appspot.com",
-        messagingSenderId: "1066711788932",
-        appId: "1:1066711788932:web:0fc9bf4b5e530084a741d1",
-        measurementId: "G-G8SRYZW39X",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-
-      //make auth and firestore references
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-      const functions = firebase.app().functions("asia-east2");
-    </script>
-
-    <script src="js/requests.js"></script>
-    <script src="js/auth.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/requests.js"></script>
   </body>
 </html>
