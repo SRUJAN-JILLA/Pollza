@@ -11,7 +11,6 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-
   <body>
     <!-- auth modals -->
     <div class="auth open">
@@ -51,27 +50,26 @@
 
     <header>
       <nav>
-        <span style="max-width: 800px; margin-right: 70%; font-size: 25px">
-          <b>Pollza</b>
-        </span>
         <a class="add-request">add request</a>
         <a class="sign-out">sign out</a>
       </nav>
     </header>
 
-    <section class="content">
-      <h1>Best Framework:</h1>
+    <section class="content" id="app">
+      <h1>Tutorial Requests</h1>
       <ul class="request-list">
-        <li>
-          <span class="text">Laravel 6 tutorial</span>
+        <li v-for="request in requests">
+          <span class="text">{{ request.text }}</span>
           <div>
-            <span class="votes">125</span>
+            <span class="votes">{{ request.upvotes }}</span>
             <i class="material-icons upvote">arrow_upward</i>
           </div>
         </li>
       </ul>
     </section>
 
+    <!-- vue js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 
